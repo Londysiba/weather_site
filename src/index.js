@@ -33,7 +33,13 @@ function weatherCondition(response) {
     response.data.wind.speed
   );
   document.querySelector("#weather-condition").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
+
+  document.querySelector("#icon").setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+   );
+  document.querySelector("#icon").setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
@@ -81,8 +87,5 @@ dateElement.innerHTML = dateFormat(currentTime);
 
 let searchForm = document.querySelector("#search-bar");
 searchForm.addEventListener("submit", submit);
-
-let currentLocationButton = document.querySelector("#current-location-button");
-currentLocationButton.addEventListener("click", getCurrentLocation);
 
 search("Durban");
