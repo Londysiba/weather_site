@@ -18,11 +18,12 @@
             <div class="weather-info">
                 <form id="search-bar" class="mb-3">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col-9">
                             <input 
                             type="search" 
                             placeholder="Enter city name..." 
-                            autofocus="on" autocomplete="off"
+                            autofocus="on" 
+                            autocomplete="off"
                             id="search-city-text" 
                             class="form-control shadow-sm" 
                             />
@@ -31,16 +32,18 @@
                             <input 
                             type="submit" 
                             value="Search" 
-                            class="form-control btn btn-primary shadow-sm w-100" 
+                            class="btn btn-primary shadow-sm w-100" 
                             />
                         </div>
                     </div>
                 </form>
-                <h1 id="city"></h1>
-                <ul>
-                    <li id="date"></li>
-                    <li id="weather-condition"></li>
-                </ul>
+                <div class="city-info">
+                    <h1 id="city"></h1>
+                    <ul>
+                        <li id="date"></li>
+                        <li id="weather-condition"></li>
+                    </ul>
+                </div>
                 <div class="row">
                     <div class="col-6">
                         <div class="clearfix icon-temperature">
