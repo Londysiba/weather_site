@@ -82,6 +82,15 @@ li {
   top: -34px;
 }
 
+.active {
+  color: rgb(33, 33, 33);
+  cursor: default;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
 footer {
   text-align: center;
   font-style: italic;
