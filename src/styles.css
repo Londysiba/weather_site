@@ -1,20 +1,7 @@
 body {
   background-color: azure;
 }
-.forecast {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-.forecast-item {
-  text-align: center;
-  flex: 1;
-}
-.forecast-item .icon {
-  font-size: 30px;
-  margin-bottom: 5px;
-}
+
 .weather-page {
   background: radial-gradient(
     328px at 2.9% 15%,
