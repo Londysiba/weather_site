@@ -75,8 +75,8 @@ function showForecast(response) {
       width="42"
       />
       <div class="forecast-temp">
-      <span class="forecast-temp-max"> ${Math.round(forecastDay.temp.max)}° </span>
-      <span class="forecast-temp-min"> ${Math.round(forecastDay.temp.min)}° </span>
+      <span class="forecast-temp-max" data-celsius="${forecastDay.temp.max}"> ${Math.round(forecastDay.temp.max)}° </span>
+      <span class="forecast-temp-min" data-celsius="${forecastDay.temp.min}"> ${Math.round(forecastDay.temp.min)}° </span>
       </div>
       </div>
       `;
@@ -129,14 +129,28 @@ function convertToFahrenheit(event) {
   fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheiTemperature);
+
+  let forecastTempElements = document.querySelectorAll(".forecast-temp-max, .forecast-temp-min");
+  forecastTempElements.forEach((element) => {
+    let celsiusValue = element.dataset.celsius;
+    let fahrenheitValue = (celsiusValue * 9) / 5 + 32;
+    element.innerHTML = `${Math.round(fahrenheitValue)}°`;
+  });
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
+
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+
+  let forecastTempElements = document.querySelectorAll(".forecast-temp-max, .forecast-temp-min");
+  forecastTempElements.forEach((element) => {
+    let celsiusValue = element.dataset.celsius;
+    element.innerHTML = `${Math.round(celsiusValue)}°`;
+  });
 }
 
 let celsiusTemperature = null;
