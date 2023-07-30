@@ -43,6 +43,10 @@ li {
   list-style: none;
 }
 
+.weather-info {
+  margin-top: 40px;
+}
+
 .city-info {
   margin-bottom: 20px;
 }
@@ -81,7 +85,7 @@ li {
 
 .weather-forecast {
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   text-align: center;
   color: #000;
   }
